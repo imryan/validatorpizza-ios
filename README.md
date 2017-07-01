@@ -11,5 +11,5 @@
     //
 }];
     
-[[ValidatorPizza sharedInstance] check:@"example@example.com type:VPCheckTypeEmail delegate:self];
+[[ValidatorPizza sharedInstance] check:@"example@example.com" type:VPCheckTypeEmail delegate:self];
 ```
