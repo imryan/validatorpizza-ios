@@ -7,9 +7,9 @@
 
 # example
 ```
-[ValidatorPizza sharedInstance] check:domain type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
+[ValidatorPizza sharedInstance] check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
     //
 }];
     
-[[ValidatorPizza sharedInstance] check:email type:VPCheckTypeEmail delegate:self];
+[[ValidatorPizza sharedInstance] check:@"example@example.com type:VPCheckTypeEmail delegate:self];
 ```
