@@ -19,7 +19,7 @@ Result dictionaries contain a structure such as:
    "remaining_requests": 115
 }
 ```
-Or for an invald email:
+Or for an invalid email:
 ```
 {
    "status": 400,
