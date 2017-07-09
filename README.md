@@ -31,7 +31,7 @@ Library usage:
 ```
 // Block usage
 [ValidatorPizza sharedInstance] check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
-    //
+    if (!error) ...
 }];
 
 // Delegate usage
