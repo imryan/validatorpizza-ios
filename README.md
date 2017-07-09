@@ -1,5 +1,5 @@
 # validatorpizza-ios
-🍕 iOS wrapper for the simple disposable email hunter
+🍕 iOS wrapper for the simple disposable email hunter and validator
 
 # Setup
 * Download project and drop in the contents of `ValidatorPizza` to your project.
@@ -18,7 +18,9 @@ Result dictionaries contain a structure such as:
    "did_you_mean": null,
    "remaining_requests": 115
 }
+```
 Or for an invald email:
+```
 {
    "status": 400,
    "error": "The email address is invalid."
@@ -27,9 +29,11 @@ Or for an invald email:
 
 Library usage:
 ```
+// Block usage
 [ValidatorPizza sharedInstance] check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
     //
 }];
-    
+
+// Delegate usage
 [[ValidatorPizza sharedInstance] check:@"example@example.com" type:VPCheckTypeEmail delegate:self];
 ```
