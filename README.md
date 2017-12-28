@@ -1,39 +1,47 @@
-# validatorpizza-ios
-🍕 iOS wrapper for the simple disposable email hunter and validator
+# Validator.pizza iOS
+🍕 Bite-sized iOS wrapper for the simple disposable email hunter and validator.
 
 # Setup
 * Download project and drop in the contents of `ValidatorPizza` to your project.
 * `#import "ValidatorPizza.h"`
 
 # Usage
-Result dictionaries contain a structure such as:
 ```
-{
-   "status": 200,
-   "email": "notryancohen@gmail.com",
-   "domain": "gmail.com",
-   "mx": true,
-   "disposable": false,
-   "alias": false,
-   "did_you_mean": null,
-   "remaining_requests": 115
-}
-```
-Or for an invalid email:
-```
-{
-   "status": 400,
-   "error": "The email address is invalid."
-}
-```
-
-Library usage:
-```
-// Block usage
-[ValidatorPizza sharedInstance] check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
+// Validating a domain
+[ValidatorPizza check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
     if (!error) ...
 }];
 
-// Delegate usage
-[[ValidatorPizza sharedInstance] check:@"example@example.com" type:VPCheckTypeEmail delegate:self];
+// Validating an email address
+[ValidatorPizza check:@"me@example.com" type:VPCheckTypeEmail block:^(BOOL isValid, NSDictionary *results, NSError *error) {
+    if (!error) ...
+}];
+```
+
+## Response
+Result dictionaries contain a structure such as:
+```
+// Valid email
+{
+    "status": 200,
+    "email": "email@example.com",
+    "domain": "example.com",
+    "mx": false,
+    "disposable": false,
+    "alias": false,
+    "did_you_mean": false,
+    "remaining_requests": 119
+}
+
+// Invalid email
+{
+    "status": 400,
+    "error": "The email address is invalid."
+}
+
+// Requests limit reached
+{
+    "status": 429,
+    "error": "Rate limit exceeded."
+}
 ```

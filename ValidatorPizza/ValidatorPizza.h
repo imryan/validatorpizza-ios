@@ -15,40 +15,21 @@ typedef NS_ENUM(NSUInteger, VPCheckType) {
     VPCheckTypeDomain
 };
 
-typedef void (^VPEmailResultBlock)(BOOL isValid, NSDictionary * _Nullable results, NSError * _Nullable error);
-
-@protocol ValidatorPizzaProtocol <NSObject>
-
-@required
-- (void)validatorPizza:(nonnull ValidatorPizza *)validator checkedWithResult:(nonnull NSDictionary *)result;
-
-@end
+typedef void (^VPResultBlock)(BOOL isValid, NSDictionary * _Nullable results, NSError * _Nullable error);
 
 @interface ValidatorPizza : NSObject
 
 /**
- Shared instance
+ Validate email or domain with block
  
- @return Singleton instance
- */
-+ (nonnull instancetype)sharedInstance;
-
-/**
- Check with block
+ Returns @c VPResultBlock containing a boolean value @c isValid
+ for general validity, a dictionary containing a response, and
+ an @c NSError object if an error occurs.
  
- @param email Email or domain name
+ @param value Email or domain name
  @param type  VPCheckTypeEmail or VPCheckTypeDomain
  @param block Returns validity, response, and error
  */
-- (void)check:(nonnull NSString *)email type:(VPCheckType)type block:(nonnull VPEmailResultBlock)block;
-
-/**
- Check with delegate
- 
- @param email    Email or domain name
- @param type     VPCheckTypeEmail or VPCheckTypeDomain
- @param delegate Class to receive callbacks
- */
-- (void)check:(nonnull NSString *)email type:(VPCheckType)type delegate:(nonnull id<ValidatorPizzaProtocol>)delegate;
++ (void)validate:(NSString * _Nonnull)value type:(VPCheckType)type block:(nonnull VPResultBlock)block;
 
 @end
