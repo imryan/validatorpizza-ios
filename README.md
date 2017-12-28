@@ -32,13 +32,17 @@ Result dictionaries contain a structure such as:
     "did_you_mean": false,
     "remaining_requests": 119
 }
+```
 
+```
 // Invalid email
 {
     "status": 400,
     "error": "The email address is invalid."
 }
+```
 
+```
 // Requests limit reached
 {
     "status": 429,
