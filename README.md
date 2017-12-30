@@ -1,7 +1,7 @@
 # Validator.pizza iOS
 🍕 Bite-sized iOS wrapper for the simple disposable email hunter and validator.
 
-[![CI Status](http://img.shields.io/travis/imryan/ValidatorPizza.svg?style=flat)](https://travis-ci.org/imryan/ValidatorPizza)
+[![CI Status](http://img.shields.io/travis/imryan/ValidatorPizza.svg?style=flat)](https://travis-ci.org/imryan/validatorpizza-ios)
 [![Version](https://img.shields.io/cocoapods/v/ValidatorPizza.svg?style=flat)](http://cocoapods.org/pods/ValidatorPizza)
 [![License](https://img.shields.io/cocoapods/l/ValidatorPizza.svg?style=flat)](http://cocoapods.org/pods/ValidatorPizza)
 [![Platform](https://img.shields.io/cocoapods/p/ValidatorPizza.svg?style=flat)](http://cocoapods.org/pods/ValidatorPizza)
