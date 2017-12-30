@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ValidatorPizza'
   s.version          = '1.0.0'
-  s.summary          = '🍕 Bite-sized iOS wrapper for the simple disposable email hunter and validator'
+  s.summary          = 'Objective-C wrapper for the Validator.pizza email validation service'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+🍕 Bite-sized iOS wrapper for the simple disposable email hunter and validator
                        DESC
 
   s.homepage         = 'https://github.com/imryan/validatorpizza-ios'
