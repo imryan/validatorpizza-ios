@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/ValidatorPizza.svg?style=flat)](http://cocoapods.org/pods/ValidatorPizza)
 
 # Usage
-```
+```objective-c
 // Validating a domain
 [ValidatorPizza check:@"example.com" type:VPCheckTypeDomain block:^(BOOL isValid, NSDictionary *results, NSError *error) {
     if (!error) ...
@@ -21,7 +21,7 @@
 
 ## Response
 Result dictionaries contain a structure such as:
-```
+```json
 // Valid email
 {
   "status": 200,
@@ -35,7 +35,7 @@ Result dictionaries contain a structure such as:
 }
 ```
 
-```
+```json
 // Invalid email
 {
   "status": 400,
@@ -43,7 +43,7 @@ Result dictionaries contain a structure such as:
 }
 ```
 
-```
+```json
 // Requests limit reached
 {
   "status": 429,
